@@ -1,0 +1,39 @@
+{
+  "contents": [
+    {
+      "language": "en",
+      "fieldCanNotBeEmpty": "This field cannot be empty",
+      "fieldIsRequired": "This field is required",
+      "invalidDateFormat": "Invalid date format, should be ",
+      "invalidDateInPast": "Invalid date: the date cannot be past",
+      "invalidAmount": "Invalid amount",
+      "invalidEmailFormat": "Incorrect email format",
+      "invalidAccountEmailPhoneFormat": "The account number of the beneficiary is invalid (please use a Paysera account number, a phone number, or an email of the recipient)",
+      "accountNotFound": "Account not found",
+      "incorrectBankCode": "Incorrect bank code",
+      "invalidPayerCode": "Invalid payer code",
+      "receiptAddressIsNotIndicated": "Recipient address not indicated",
+      "textIsTooLong": "The text is too long",
+      "incorrectPhoneNumberFormat": "Incorrect phone number format",
+      "incorrectWalletNumber": "Invalid purse number",
+      "invalidValue": "Invalid value"
+    },
+    {
+      "language": "lt",
+      "fieldCanNotBeEmpty": "Šis laukelis negali būti tuščias",
+      "invalidDateFormat": "Neteisingai įvesta data. Įveskite šiuo formatu: ",
+      "invalidDateInPast": "Blogai įvesta data: data negali būti praeityje",
+      "invalidAmount": "Blogai įvesta suma",
+      "invalidEmailFormat": "Neteisingas el. pašto formatas",
+      "invalidAccountEmailPhoneFormat": "Neteisingai įvesta gavėjo sąskaita (reikia naudoti gavėjo Paysera sąskaitos numerį, tel. numerį arba el. pašto adresą)",
+      "accountNotFound": "Tokia sąskaita nerasta",
+      "incorrectBankCode": "Neteisingas banko kodas",
+      "invalidPayerCode": "Klaidingas mokėtojo kodas",
+      "receiptAddressIsNotIndicated": "Neįvestas gavėjo adresas",
+      "textIsTooLong": "Įvestas tekstas per ilgas",
+      "incorrectPhoneNumberFormat": "Blogas telefono numerio formatas",
+      "incorrectWalletNumber": "",
+      "invalidValue": ""
+    }
+  ]
+}
