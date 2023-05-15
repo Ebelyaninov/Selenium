@@ -1,26 +1,26 @@
-package adminAccountingPages;
-
-import data.MainCoreDataManager;
-import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import ui.pages.BasePageSignedIn;
-import ui.utils.UIEndpoints;
-import ui.wrapper.base.Element;
-import ui.wrapper.widget.Button;
-import ui.wrapper.widget.Select;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static utils.UrlUtils.buildUrl;
-
-public class AccountsListPage extends BasePageSignedIn<AccountsListPage> {
-    public AccountsListPage(WebDriver driver) {
-        super(driver);
-    }
-
+//package adminAccountingPages;
+//
+//import data.MainCoreDataManager;
+//import io.qameta.allure.Step;
+//import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.support.FindBy;
+//import org.openqa.selenium.support.ui.ExpectedConditions;
+//import ui.pages.BasePageSignedIn;
+//import ui.utils.UIEndpoints;
+//import ui.wrapper.base.Element;
+//import ui.wrapper.widget.Button;
+//import ui.wrapper.widget.Select;
+//
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//import static utils.UrlUtils.buildUrl;
+//
+//public class AccountsListPage extends BasePageSignedIn<AccountsListPage> {
+//    public AccountsListPage(WebDriver driver) {
+//        super(driver);
+//    }
+//
 //    @FindBy(id = "company")
 //    protected Select company;
 //    @FindBy(xpath = "//button[@class='btn btn-primary' and @type='submit']")
@@ -149,4 +149,4 @@ public class AccountsListPage extends BasePageSignedIn<AccountsListPage> {
 //    public String getModalBody() {
 //        return modalBody.getText();
 //    }
-}
+//}
