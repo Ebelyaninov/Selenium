@@ -18,9 +18,19 @@ public class NovaPoshtaMainPage extends BasePageSignedIn<NovaPoshtaMainPage> {
     @FindBy(xpath = "//a[@class='reg']")
     protected WebElement reg;
 
+    @FindBy(xpath = "//head/title")
+    protected WebElement title;
+
     @Step("Navigate to 'Accounts list' page via url")
     public NovaPoshtaMainPage openMainPage() {
         navigate(buildUrl(MainCoreDataManager.getBrowserConfiguration().getNovaPoshtaUrl()));
+        return this;
+    }
+
+    //For jenkins parameters
+    public NovaPoshtaMainPage openMainPageWithParameters() {
+        String url = System.getProperty("URL");
+        navigate(buildUrl(url));
         return this;
     }
 
@@ -28,5 +38,10 @@ public class NovaPoshtaMainPage extends BasePageSignedIn<NovaPoshtaMainPage> {
     public NovaPoshtaMainPage clickOnReg() {
         reg.click();
         return this;
+    }
+
+    @Step("Get main title")
+    public String getTtitle() {
+        return title.getAttribute("text");
     }
 }

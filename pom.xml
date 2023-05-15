@@ -96,6 +96,27 @@
                 <artifactId>allure-maven</artifactId>
                 <version>${allure.plugin.version}</version>
             </plugin>
+            <!--- for jenkis parameters -->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <version>2.20</version>-->
+<!--                <configuration>-->
+<!--                    <properties>-->
+<!--                        <property>-->
+<!--                            <name>url</name>-->
+<!--                            <vale>${URL}</vale>-->
+<!--                        </property>-->
+<!--                        <property>-->
+<!--                            <name>title</name>-->
+<!--                            <vale>${title}</vale>-->
+<!--                        </property>-->
+<!--                    </properties>-->
+<!--                    <suiteXmlFiles>-->
+<!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
+<!--                    </suiteXmlFiles>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>

@@ -1,6 +1,7 @@
 package e2e.admin;
 
 import e2e.BaseTestsUI;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -37,5 +38,13 @@ public class AccountsListTests extends BaseTestsUI {
 //        List<String> companyListFromUI = accountsListPage.getCompanies();
 //        assertEquals(accountsListPage.getPageTitle(), AccountsListPage.TITLE, Messages.ui.correctContentHeader());
 //        companyListFromUI.forEach((items) -> items.equals(partnersList.get(partnersList.indexOf(items))));
+    }
+
+    @Test(description = "Testing jenkins parameters")
+    public void testingJenkinsParameters() {
+        String titleFromProperties = System.getProperty("title");
+        String title = "Термінова і експрес доставка: транспортно-логістичні послуги в Києві та по всій Україні - служба доставки №1 «Нова пошта»";
+        novaPoshtaMainPage.openMainPage();
+        Assert.assertEquals(novaPoshtaMainPage.getTtitle(), title, title);
     }
 }
