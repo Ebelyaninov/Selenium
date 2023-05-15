@@ -22,8 +22,8 @@ public class BaseTest {
 
     private final String temporaryLogsFilePath = BUILD_DIR + "/test.log";
     private String permanentlyLogsFilePath;
-    @Getter(AccessLevel.NONE)
-    private final ErrorMessages errorMessagesContent = readJsonObjectFromFile(MainCoreDataManager.getDirectories().data() + "localized.errors.json", ErrorMessages.class);
+//    @Getter(AccessLevel.NONE)
+//    private final ErrorMessages errorMessagesContent = readJsonObjectFromFile(MainCoreDataManager.getDirectories().data() + "localized.errors.json", ErrorMessages.class);
 
     @BeforeMethod(description = "Logging start", alwaysRun = true)
     public void beforeTestGlobal(Method method) {
