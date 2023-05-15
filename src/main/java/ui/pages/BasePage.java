@@ -29,8 +29,8 @@ public abstract class BasePage<T> {
     protected final LanguageUtils languageUtils;
     protected final WebDriverWait wait;
     protected final JavascriptExecutor js;
-    @Getter(AccessLevel.NONE)
-    private final ErrorMessages errorMessagesContent;
+//    @Getter(AccessLevel.NONE)
+//    private final ErrorMessages errorMessagesContent;
     private final Alert alert;
 
     public BasePage(WebDriver driver) {
@@ -40,7 +40,7 @@ public abstract class BasePage<T> {
         this.actions = new Actions(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(MainCoreDataManager.getBrowserConfiguration().timeoutSeconds()));
         this.alert = new Alert(driver);
-        errorMessagesContent = readJsonObjectFromFile(MainCoreDataManager.getDirectories().data() + "localized.errors.json", ErrorMessages.class);
+        //errorMessagesContent = readJsonObjectFromFile(MainCoreDataManager.getDirectories().data() + "localized.errors.json", ErrorMessages.class);
     }
 
     protected Alert alert() {
@@ -57,9 +57,9 @@ public abstract class BasePage<T> {
         return (T) this;
     }
 
-    public ErrorMessages.ErrorMessage getErrorMessages() {
-        return languageUtils.getContent(errorMessagesContent);
-    }
+//    public ErrorMessages.ErrorMessage getErrorMessages() {
+//        return languageUtils.getContent(errorMessagesContent);
+//    }
 
     protected void waitForLoaderDisappear() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(MainCoreDataManager.getBrowserConfiguration().shortTimeoutSeconds()));
