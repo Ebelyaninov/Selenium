@@ -34,4 +34,7 @@ public interface BrowserConfiguration extends Config {
 
     @Key("admin.application.url")
     String getAdminApplicationUrl();
+
+    @Key("novaposhta.ua")
+    String getNovaPoshtaUrl();
 }

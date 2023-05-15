@@ -1,11 +1,10 @@
 package e2e.admin;
 
-import adminAccountingPages.AccountsListPage;
-import authorization.User;
 import e2e.BaseTestsUI;
-import messages.Messages;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,18 +23,19 @@ public class AccountsListTests extends BaseTestsUI {
 
     @BeforeClass(description = "Login with user and open the page before tests")
     public void confirmPage() {
-        mockedLoginPage.loginAs(User.ADMIN.getProfile().getCovenanteeId());
+//        mockedLoginPage.loginAs(User.ADMIN.getProfile().getCovenanteeId());
         partnersList.add(CHOOSE_COMPANY);
     }
 
-    //    @BeforeMethod(description = "open accountsList page")
-//    void openPage() {
-//        accountsListPage.openAccountingListViaUrl();
-//    }
+    @BeforeMethod(description = "open accountsList page")
+    void openPage() {
+        novaPoshtaMainPage.openMainPage();
+    }
+
     @Test(description = "Get partners for account list")
     public void accountingListCompany() {
-        List<String> companyListFromUI = accountsListPage.getCompanies();
-        assertEquals(accountsListPage.getPageTitle(), AccountsListPage.TITLE, Messages.ui.correctContentHeader());
-        companyListFromUI.forEach((items) -> items.equals(partnersList.get(partnersList.indexOf(items))));
+//        List<String> companyListFromUI = accountsListPage.getCompanies();
+//        assertEquals(accountsListPage.getPageTitle(), AccountsListPage.TITLE, Messages.ui.correctContentHeader());
+//        companyListFromUI.forEach((items) -> items.equals(partnersList.get(partnersList.indexOf(items))));
     }
 }

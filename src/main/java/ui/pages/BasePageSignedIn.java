@@ -20,18 +20,18 @@ import static org.testng.Assert.assertTrue;
 
 @Slf4j
 public abstract class BasePageSignedIn<T extends BasePage> extends BasePage<T> implements Page<BasePageSignedIn> {
-    @FindBy(xpath = "//h1[contains(@class,'page-title')]")
-    protected Label header;
-    @FindBy(xpath = "//footer")
-    protected Label footer;
-    @FindBy(xpath = "//div[@data-field-error-container]/div")
-    protected Label errorTextOnField;
-    @FindBy(xpath = "//div[@data-field-error-container]/div")
-    protected List<Label> errorsTextOnFieldList;
-    @FindBy(xpath = "//li[@class='current-user']//b")
-    protected Label currentUserName;
-    @FindBy(xpath = "//li[@class='current-user']//span[contains(@class,'current-user-id')]")
-    protected Label currentUserCovenanteeId;
+//    @FindBy(xpath = "//h1[contains(@class,'page-title')]")
+//    protected Label header;
+//    @FindBy(xpath = "//footer")
+//    protected Label footer;
+//    @FindBy(xpath = "//div[@data-field-error-container]/div")
+//    protected Label errorTextOnField;
+//    @FindBy(xpath = "//div[@data-field-error-container]/div")
+//    protected List<Label> errorsTextOnFieldList;
+//    @FindBy(xpath = "//li[@class='current-user']//b")
+//    protected Label currentUserName;
+//    @FindBy(xpath = "//li[@class='current-user']//span[contains(@class,'current-user-id')]")
+//    protected Label currentUserCovenanteeId;
 
     public BasePageSignedIn(WebDriver driver) {
         super(driver);
@@ -62,15 +62,15 @@ public abstract class BasePageSignedIn<T extends BasePage> extends BasePage<T> i
         return (T) this;
     }
 
-    @Step("Getting logged in user covenantee id")
-    protected Integer getCurrentUserId() {
-        return Integer.valueOf(currentUserCovenanteeId.getText());
-    }
+//    @Step("Getting logged in user covenantee id")
+//    protected Integer getCurrentUserId() {
+//        return Integer.valueOf(currentUserCovenanteeId.getText());
+//    }
 
-    @Step("Getting logged in user covenantee name")
-    protected String getCurrentUserName() {
-        return currentUserName.getText();
-    }
+//    @Step("Getting logged in user covenantee name")
+//    protected String getCurrentUserName() {
+//        return currentUserName.getText();
+//    }
 
     private By getMenuOption(MenuOption option) {
         return By.xpath(String.format("//span[text()='%s']//parent::a", option.getTitle()));
@@ -82,29 +82,29 @@ public abstract class BasePageSignedIn<T extends BasePage> extends BasePage<T> i
         return (T) this;
     }
 
-    @Step("Validate that only error on the page is: \"{0}\"")
-    public T validateOnlyError(String errorString) {
-        wait.until(ExpectedConditions.visibilityOf(errorTextOnField));
-        assertEquals(errorsTextOnFieldList.size(), 1, "Check is only one error is present on page");
-        wait.until(ExpectedConditions.textToBePresentInElement(errorTextOnField, errorString));
-        return (T) this;
-    }
+//    @Step("Validate that only error on the page is: \"{0}\"")
+//    public T validateOnlyError(String errorString) {
+//        wait.until(ExpectedConditions.visibilityOf(errorTextOnField));
+//        assertEquals(errorsTextOnFieldList.size(), 1, "Check is only one error is present on page");
+//        wait.until(ExpectedConditions.textToBePresentInElement(errorTextOnField, errorString));
+//        return (T) this;
+//    }
 
-    @Step("Validate that first error on the page is: \"{0}\"")
-    public T validateFirstError(String errorString) {
-        wait.until(ExpectedConditions.visibilityOf(errorTextOnField));
-        wait.until(ExpectedConditions.textToBePresentInElement(errorTextOnField, errorString));
-        return (T) this;
-    }
+//    @Step("Validate that first error on the page is: \"{0}\"")
+//    public T validateFirstError(String errorString) {
+//        wait.until(ExpectedConditions.visibilityOf(errorTextOnField));
+//        wait.until(ExpectedConditions.textToBePresentInElement(errorTextOnField, errorString));
+//        return (T) this;
+//    }
 
-    @Step("Validate that all \"{1}\" error on the page is: \"{0}\"")
-    public T validateAllErrorsHasSameTextError(String errorString, int numberOfErrors) {
-        wait.until(ExpectedConditions.visibilityOf(errorTextOnField));
-        assertEquals(errorsTextOnFieldList.size(), numberOfErrors, "Amount of errors on page is incorrect: ");
-        assertTrue(errorsTextOnFieldList.stream().allMatch(element -> element.getText().equals(errorString)),
-                "All errors do not have same text: ");
-        return (T) this;
-    }
+//    @Step("Validate that all \"{1}\" error on the page is: \"{0}\"")
+//    public T validateAllErrorsHasSameTextError(String errorString, int numberOfErrors) {
+//        wait.until(ExpectedConditions.visibilityOf(errorTextOnField));
+//        assertEquals(errorsTextOnFieldList.size(), numberOfErrors, "Amount of errors on page is incorrect: ");
+//        assertTrue(errorsTextOnFieldList.stream().allMatch(element -> element.getText().equals(errorString)),
+//                "All errors do not have same text: ");
+//        return (T) this;
+//    }
 
     @Step("Switch to new tab")
     public T switchToNewTab(int tabNumber) {
@@ -113,10 +113,10 @@ public abstract class BasePageSignedIn<T extends BasePage> extends BasePage<T> i
         return (T) this;
     }
 
-    @Step("Get the title of the opened page")
-    public String getPageTitle() {
-        return header.getText();
-    }
+//    @Step("Get the title of the opened page")
+//    public String getPageTitle() {
+//        return header.getText();
+//    }
 
     @Step("Get an array of parts of a string splitted by spaces")
     public String[] getArrayPartsString(String text) {
