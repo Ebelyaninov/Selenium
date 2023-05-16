@@ -5,11 +5,13 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ru.yandex.qatools.htmlelements.element.Button;
 import ui.pages.BasePageSignedIn;
+
 
 import static utils.UrlUtils.buildUrl;
 
-public class NovaPoshtaMainPage extends BasePageSignedIn<NovaPoshtaMainPage> {
+public class NovaPoshtaMainPage extends BasePageSignedIn<NovaPoshtaMainPage>  {
 
     public NovaPoshtaMainPage(WebDriver driver) {
         super(driver);
@@ -20,6 +22,9 @@ public class NovaPoshtaMainPage extends BasePageSignedIn<NovaPoshtaMainPage> {
 
     @FindBy(xpath = "//head/title")
     protected WebElement title;
+
+    @FindBy(xpath = "//a[@class='logo_in']")
+    protected WebElement button;
 
     @Step("Navigate to 'Accounts list' page via url")
     public NovaPoshtaMainPage openMainPage() {
@@ -43,5 +48,11 @@ public class NovaPoshtaMainPage extends BasePageSignedIn<NovaPoshtaMainPage> {
     @Step("Get main title")
     public String getTtitle() {
         return title.getAttribute("text");
+    }
+
+    @Step("Click on button")
+    public NovaPoshtaMainPage clickOnButton() {
+         button.click();
+         return this;
     }
 }

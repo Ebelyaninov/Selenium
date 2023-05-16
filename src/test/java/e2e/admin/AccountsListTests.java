@@ -47,4 +47,12 @@ public class AccountsListTests extends BaseTestsUI {
         novaPoshtaMainPage.openMainPage();
         Assert.assertEquals(novaPoshtaMainPage.getTtitle(), title, title);
     }
+
+    @Test(description = "Navigate to login page")
+    public void navigateToLoginPage() {
+        String titleFromProperties = System.getProperty("title");
+        String title = "Бізнес-кабінет - Нова пошта";
+        novaPoshtaMainPage.clickOnButton();
+        Assert.assertEquals(driver.getTitle(), title, title);
+    }
 }

@@ -86,6 +86,12 @@
             <artifactId>jsch</artifactId>
             <version>${jsh.version}</version>
         </dependency>
+        <!--- HtmlElements -->
+        <dependency>
+            <groupId>ru.yandex.qatools.htmlelements</groupId>
+            <artifactId>htmlelements-java</artifactId>
+            <version>1.8</version>
+        </dependency>
 
     </dependencies>
 
