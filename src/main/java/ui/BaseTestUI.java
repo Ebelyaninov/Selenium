@@ -1,5 +1,6 @@
 package ui;
 
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
@@ -9,6 +10,7 @@ import ui.driver.MainDriver;
 import ui.pages.MockedLoginPage;
 import utils.BaseTest;
 
+@Slf4j
 public class BaseTestUI extends BaseTest {
     protected static final String BLANK = "";
     public static final String SPACES = "      ";

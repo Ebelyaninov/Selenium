@@ -50,9 +50,16 @@ public class AccountsListTests extends BaseTestsUI {
 
     @Test(description = "Navigate to login page")
     public void navigateToLoginPage() {
-        String titleFromProperties = System.getProperty("title");
         String title = "Бізнес-кабінет - Нова пошта";
         novaPoshtaMainPage.clickOnButton();
+        Assert.assertEquals(driver.getTitle(), title, title);
+    }
+
+    //Поиск єлемента и в нем поиск другого єлемента
+    @Test(description = "Click on cost of delivery")
+    public void clikOnCoastOfDelivery() {
+        String title = "Вартість доставки - «Нова Пошта»| Доставка майбутнього";
+        novaPoshtaMainPage.clickOnLeftMenuItem();
         Assert.assertEquals(driver.getTitle(), title, title);
     }
 }

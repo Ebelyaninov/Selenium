@@ -2,6 +2,7 @@ package adminAccountingPages;
 
 import data.MainCoreDataManager;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +26,12 @@ public class NovaPoshtaMainPage extends BasePageSignedIn<NovaPoshtaMainPage>  {
 
     @FindBy(xpath = "//a[@class='logo_in']")
     protected WebElement button;
+
+    @FindBy(xpath = "//div[@class='block_left']")
+    protected WebElement leftSideBar;
+
+    @FindBy(xpath = "//a[@class='cost']")
+    protected WebElement coastOfDelivery;
 
     @Step("Navigate to 'Accounts list' page via url")
     public NovaPoshtaMainPage openMainPage() {
@@ -54,5 +61,16 @@ public class NovaPoshtaMainPage extends BasePageSignedIn<NovaPoshtaMainPage>  {
     public NovaPoshtaMainPage clickOnButton() {
          button.click();
          return this;
+    }
+
+    @Step("Find leftSideBar")
+    public WebElement getLeftSideBat() {
+        return leftSideBar;
+    }
+
+    @Step("Click on element on leftSide bar")
+    public NovaPoshtaMainPage clickOnLeftMenuItem() {
+        getLeftSideBat().findElement(By.xpath("//a[@class='cost']")).click();
+        return this;
     }
 }
