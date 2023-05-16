@@ -1,13 +1,22 @@
 package e2e.admin;
 
 import e2e.BaseTestsUI;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
@@ -34,10 +43,21 @@ public class AccountsListTests extends BaseTestsUI {
     }
 
     @Test(description = "Get partners for account list")
-    public void accountingListCompany() {
-//        List<String> companyListFromUI = accountsListPage.getCompanies();
-//        assertEquals(accountsListPage.getPageTitle(), AccountsListPage.TITLE, Messages.ui.correctContentHeader());
-//        companyListFromUI.forEach((items) -> items.equals(partnersList.get(partnersList.indexOf(items))));
+    public void openExample() {
+        novaPoshtaMainPage.openExamplePage();
+//        WebDriver driver = new ChromeDriver();
+//        driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+//        driver.get("https://datatables.net/examples/server_side/row_details.html");
+//
+//        WebElement tableExample = driver.findElement(By.id("example"));
+//        List<WebElement> tableTows = tableExample.findElements(By.cssSelector("tbody > tr[role='row']"));
+//        Select select = new Select(driver.findElement(By.name("example_length")));
+
+//        select.selectByValue("25");
+//
+//        tableTows = new WebDriverWait(driver, Duration.ofNanos(10000), Duration.ofNanos(1000)).until(
+//                ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.cssSelector("#example tbody > tr[role='row']"), 25));
+//        assertEquals(tableTows.size(), 25);
     }
 
     @Test(description = "Testing jenkins parameters")
