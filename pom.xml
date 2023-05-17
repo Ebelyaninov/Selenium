@@ -87,11 +87,11 @@
             <version>${jsh.version}</version>
         </dependency>
         <!--- HtmlElements -->
-        <dependency>
-            <groupId>ru.yandex.qatools.htmlelements</groupId>
-            <artifactId>htmlelements-java</artifactId>
-            <version>1.8</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>ru.yandex.qatools.htmlelements</groupId>-->
+<!--            <artifactId>htmlelements-java</artifactId>-->
+<!--            <version>1.8</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 
@@ -103,26 +103,30 @@
                 <version>${allure.plugin.version}</version>
             </plugin>
             <!--- for jenkis parameters -->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-surefire-plugin</artifactId>-->
-<!--                <version>2.20</version>-->
-<!--                <configuration>-->
-<!--                    <properties>-->
-<!--                        <property>-->
-<!--                            <name>url</name>-->
-<!--                            <vale>${URL}</vale>-->
-<!--                        </property>-->
-<!--                        <property>-->
-<!--                            <name>title</name>-->
-<!--                            <vale>${title}</vale>-->
-<!--                        </property>-->
-<!--                    </properties>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M8</version>
+                <configuration>
+                    <!--- Параметры которые можем принимать на вход -->
+                    <properties>
+                        <property>
+                            <name>url</name>
+                            <vale>${URL}</vale>
+                        </property>
+                        <property>
+                            <name>title</name>
+                            <vale>${title}</vale>
+                        </property>
+                    </properties>
 <!--                    <suiteXmlFiles>-->
 <!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
 <!--                    </suiteXmlFiles>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+                    <!--- Запуск паралельных тестов по методам -->
+                    <threadCount>1</threadCount>
+                    <parallel>methods</parallel>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

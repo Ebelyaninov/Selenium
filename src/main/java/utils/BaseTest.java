@@ -1,6 +1,8 @@
 package utils;
 
 import data.MainCoreDataManager;
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Step;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -45,6 +47,7 @@ public class BaseTest {
         log.info("Test started: " + method.getName());
     }
 
+    @Step
     private void attachScreenshotToUITest() {
         WebDriver currentUIDriver = MainDriver.getInstance().getDriver();
         if (currentUIDriver != null) {
