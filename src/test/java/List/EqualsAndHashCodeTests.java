@@ -50,6 +50,7 @@ public class EqualsAndHashCodeTests {
         // Из-за этого перезапишем данные
         // {Person{id=1, name='Mike'}=three, Person{id=2, name='Katty'}=two}
         // [Person{id=1, name='Mike'}, Person{id=2, name='Katty'}]
+        // Он боьшой и сравнивает весь объект
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
@@ -61,11 +62,22 @@ public class EqualsAndHashCodeTests {
             return Objects.equals(name, person.name);
         }
 
+        // {object} произвольной длинны конвертируем в число фиксированной длинны -> {int} и сравниваем целые числа
         @Override
         public int hashCode() {
             int result = id;
             result = 31 * result + (name != null ? name.hashCode() : 0);
             return result;
         }
+
+        /*
+            Контракт hashCode() equals()
+            1) У двух проверяемых объектов вызываем метод hashCode()
+            eсли получили 2 разных числа, то они разные и закончили работу
+
+            2) Если хэш == то -> equals()
+
+            3) equals() -> выдает ответ
+         */
     }
 }
