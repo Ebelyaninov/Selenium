@@ -6,13 +6,13 @@ import java.util.Scanner;
 
 public class WaitAndNotifyTest {
     public static void main(String[] args) {
-        WaitAndNotify wn = new WaitAndNotify();
+        ProducerConsumer wn = new ProducerConsumer();
 
         Thread thread1 = new Thread(new Runnable() {
             @SneakyThrows
             @Override
             public void run() {
-                wn.produce();
+                wn.producer();
             }
         });
         Thread thread2 = new Thread(new Runnable() {
